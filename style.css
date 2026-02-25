@@ -1,0 +1,127 @@
+:root {
+    --main-color: #ffd700;
+    --bg-color: #121213;
+    --sub-color: #646669;
+    --text-color: #d1d0c5;
+    --error-color: #ca4754;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    width: 95%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.config {
+    display: flex;
+    align-self: center;
+    background: #1a1a1a;
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.group { display: flex; gap: 15px; }
+.line-spacer { width: 2px; height: 20px; background: #333; margin: 0 20px; }
+
+.mode-btn {
+    background: none;
+    border: none;
+    color: var(--sub-color);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.mode-btn.active { color: var(--main-color); }
+
+.status-bar {
+    height: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+#text-wrapper {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Увеличенная высота */
+    overflow: hidden; 
+    margin-bottom: 40px;
+}
+
+#text-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+#caret {
+    position: absolute;
+    width: 3px;
+    height: 36px;
+    background-color: var(--main-color);
+    top: 5px;
+    left: 0;
+    transition: left 0.12s ease-out, top 0.12s ease-out;
+    animation: blink 1s infinite;
+    z-index: 10;
+    border-radius: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.word { display: inline-flex; }
+.char { opacity: 0.3; white-space: pre; }
+.char.correct { opacity: 1; color: var(--text-color); }
+.char.incorrect { opacity: 1; color: var(--error-color); }
+.char.extra { opacity: 1; color: #7e2a33; }
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    opacity: 0.3;
+}
+
+.row { display: flex; gap: 5px; }
+.key {
+    width: 44px; height: 44px;
+    background: #1c1c1c; border: 1px solid #333;
+    border-radius: 6px; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 12px; color: #555;
+}
+
+.key.active { background: var(--main-color); color: #000; box-shadow: 0 0 8px var(--main-color); }
+.key.space { width: 320px; height: 34px; }
+
+#results-screen { text-align: center; }
+.stats-container { display: flex; gap: 60px; justify-content: center; }
+.value { font-size: 64px; color: var(--main-color); font-weight: bold; }
+.label { color: var(--sub-color); font-size: 18px; }
+.hidden { display: none !important; }
+.key-hint { background: #333; padding: 2px 6px; border-radius: 4px; color: #fff; }

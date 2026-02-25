@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeMaster PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Настройки режима -->
+        <div class="config" id="config-menu">
+            <div class="group" id="mode-selector">
+                <button class="mode-btn active" data-mode="words">слова</button>
+                <button class="mode-btn" data-mode="time">время</button>
+            </div>
+            <div class="line-spacer"></div>
+            <div class="group" id="value-selector"></div>
+        </div>
+
+        <!-- Статус (Таймер/Счетчик) -->
+        <div class="status-bar">
+            <div id="timer-display" class="status-item hidden">0</div>
+            <div id="counter-display" class="status-item hidden">0/0</div>
+        </div>
+        
+        <!-- Поле ввода текста -->
+        <div id="text-wrapper">
+            <div id="caret"></div>
+            <div id="text-display"></div>
+        </div>
+
+        <!-- Окно результатов -->
+        <div id="results-screen" class="hidden">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="label">WPM</span>
+                    <span id="wpm-value" class="value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Точность</span>
+                    <span id="accuracy-value" class="value">0%</span>
+                </div>
+            </div>
+            <p style="margin-top: 20px; color: #555;">Нажми <span class="key-hint">Tab</span> чтобы начать заново</p>
+        </div>
+
+        <!-- Клавиатура -->
+        <div class="keyboard" id="keyboard">
+            <div class="row">
+                <div class="key" id="KeyQ">Й</div><div class="key" id="KeyW">Ц</div><div class="key" id="KeyE">У</div><div class="key" id="KeyR">К</div><div class="key" id="KeyT">Е</div><div class="key" id="KeyY">Н</div><div class="key" id="KeyU">Г</div><div class="key" id="KeyI">Ш</div><div class="key" id="KeyO">Щ</div><div class="key" id="KeyP">З</div><div class="key" id="BracketLeft">Х</div><div class="key" id="BracketRight">Ъ</div>
+            </div>
+            <div class="row">
+                <div class="key" id="KeyA">Ф</div><div class="key" id="KeyS">Ы</div><div class="key" id="KeyD">В</div><div class="key" id="KeyF">А</div><div class="key" id="KeyG">П</div><div class="key" id="KeyH">Р</div><div class="key" id="KeyJ">О</div><div class="key" id="KeyK">Л</div><div class="key" id="KeyL">Д</div><div class="key" id="Semicolon">Ж</div><div class="key" id="Quote">Э</div>
+            </div>
+            <div class="row">
+                <div class="key" id="KeyZ">Я</div><div class="key" id="KeyX">Ч</div><div class="key" id="KeyC">С</div><div class="key" id="KeyV">М</div><div class="key" id="KeyB">И</div><div class="key" id="KeyN">Т</div><div class="key" id="KeyM">Ь</div><div class="key" id="Comma">Б</div><div class="key" id="Period">Ю</div>
+            </div>
+            <div class="row">
+                <div class="key space" id="Space"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
